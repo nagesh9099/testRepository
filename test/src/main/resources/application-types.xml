@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="xml" format="xml">
+      <types:example format="xml" element="Root" location="employee.xml"/>
+    </types:type>
+    <types:type name="csv" format="csv">
+      <types:shape format="weave" example="test.csv"><![CDATA[type csv = Array<{|
+  ID?: String, 
+  Name?: String, 
+  Salary?: String
+|}> {"MetadataFormat": "csv"}]]></types:shape>
+      <types:properties>
+        <types:property name="headerLineNumber" value="0"/>
+        <types:property name="header" value="true"/>
+        <types:property name="isQuotedString" value="false"/>
+      </types:properties>
+    </types:type>
+  </types:catalog>
+</types:mule>

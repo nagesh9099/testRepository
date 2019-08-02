@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns:sockets="http://www.mulesoft.org/schema/mule/sockets" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/sockets http://www.mulesoft.org/schema/mule/sockets/current/mule-sockets.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="931d6c48-7b63-495a-96a9-c7d21f14ca53" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<file:config name="File_Config" doc:name="File Config" doc:id="c2d8b3c6-6946-4552-aea1-5d6379f886e3" >
+		<file:connection workingDir="/home/askani/AnypointStudio/studio-workspace/test/src/main/resources" />
+	</file:config>
+	<flow name="testFlow" doc:id="572c3638-2474-4a30-ae01-2c12e441c691" >
+		<http:listener doc:name="Listener" doc:id="6bf78cf0-ba86-4e87-bfad-2f41e6e15705" config-ref="HTTP_Listener_config" path="/json" />
+		<set-payload value="test dattataaa" doc:name="Set Payload" doc:id="32390658-60f0-4c5b-a9ea-441b70c300ae" />
+		<logger level="INFO" doc:name="Logger" doc:id="18ddaca1-d856-48ca-853e-fc1ce42e935b" message="#[attributes.]"/> 
+	</flow>
+	
+</mule>

@@ -1,0 +1,24 @@
+{
+  "configs": [
+    "devrel-quick_start_products_api.xml"
+  ],
+  "secureProperties": [],
+  "redeploymentEnabled": true,
+  "name": "testproj",
+  "minMuleVersion": "4.1.2",
+  "requiredProduct": "MULE_EE",
+  "classLoaderModelLoaderDescriptor": {
+    "id": "mule",
+    "attributes": {
+      "exportedPackages": [],
+      "exportedResources": [
+        "api/devrel-quick_start_products_api.raml",
+        "api/exchange_modules/org.mule.examples/devrel-quick_start_product_example/1.0.0/devrel-quick_start_product_example.raml"
+      ]
+    }
+  },
+  "bundleDescriptorLoader": {
+    "id": "mule",
+    "attributes": {}
+  }
+}
