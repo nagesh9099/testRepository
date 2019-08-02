@@ -67,5 +67,6 @@ default "") ++ (payload01.code2 default ""),
 }]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="b6b067d9-2354-4c4c-8765-fd05c7d35e53" />
 	</flow>
 </mule>
